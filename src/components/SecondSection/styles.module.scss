@@ -1,0 +1,146 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1400px;
+    min-height: 70vh;
+
+
+    padding: 1rem 1.4rem;
+    margin: 0 auto;
+
+    color: black;
+
+    .textoPrincipal {
+        text-align: center;
+        //max-width: 1200px;
+
+        margin-bottom: 3rem;
+
+        h1 {
+            font-size: 2rem;
+            line-height: 1.2;
+
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+            letter-spacing: 1px;
+        }
+    }
+
+    .mediaContainer {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+        gap: 2rem;
+        //outline: 2px solid green;
+
+        width: 100%;
+
+        margin-bottom: 3rem;
+
+        .imageContainer {
+            flex: 1;
+            min-height: 350px;
+
+            border-radius: 2rem;
+            overflow: hidden;
+
+            //width: 700px;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+                object-position: center;
+
+                display: block;
+            }
+        }
+
+        .cardsContainer {
+            flex: 1;
+            //outline: 2px solid blue;
+            //width: 100%;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: .4rem 1rem;
+        }
+    }
+
+    .textSecundario {
+        text-align: center;
+        max-width: 1200px;
+
+        h2 {
+            font-size: 1.4rem;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .container {
+        .mediaContainer {
+            gap: 1.5rem;
+
+            .imageContainer {
+                min-height: 350px;
+            }
+
+            .cardsContainer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .container {
+        padding: 3rem 1rem;
+
+        .textoPrincipal {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        .mediaContainer {
+            flex-direction: column;
+
+            .imageContainer {
+                width: 100%;
+                min-height: 280px;
+            }
+
+            .cardsContainer {
+                width: 100%;
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .textSecundario {
+            h2 {
+                font-size: 1rem;
+            }
+        }
+    }
+}
