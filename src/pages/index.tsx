@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Clube férias</title>
-        <meta name="description" content="Clube de Férias" />
+        <title>Clube de Férias Aviva Vacation Clube</title>
+        <meta name="description" content="Clube de Férias Aviva Vacation Clube" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favico.svg" />
       </Head>
       <main className={styles.main}>
         <Banner />
