@@ -20,7 +20,6 @@ export default function Banner() {
                     <button>Quero Receber Novidades e Benefícios</button>
                 </div>
             </div>
-
         </section>
     )
 }

@@ -21,7 +21,7 @@ export default function ThirdSection() {
                     <div className={styles.textContainer}>
                         <h1>Férias planejadas por quem entende de férias há mais de 26 anos.</h1>
                         <div className={styles.buttonContainer}>
-                            <button>Quero minhas férias com economia e liberdade</button>
+                            <button type='button'>Quero minhas férias com economia e liberdade</button>
                         </div>
                     </div>
                     <div className={styles.swiperContainer}>

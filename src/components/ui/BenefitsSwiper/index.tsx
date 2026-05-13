@@ -13,7 +13,7 @@ export default function BenefitsSwiper() {
     return (
         <Swiper
             modules={[Pagination, Autoplay]}
-            spaceBetween={20}
+            spaceBetween={10}
             slidesPerView={1}
             pagination={{ clickable: true }}
             /*autoplay={{
@@ -40,12 +40,13 @@ export default function BenefitsSwiper() {
                                 fill
                                 className={styles.image}
                             />
+                            <div className={styles.content}>
+                                <h3>{item.title}</h3>
+                                <p>{item.text}</p>
+                            </div>
                         </div>
 
-                        <div className={styles.content}>
-                            <h3>{item.title}</h3>
-                            <p>{item.text}</p>
-                        </div>
+
                     </article>
                 </SwiperSlide>
             ))}

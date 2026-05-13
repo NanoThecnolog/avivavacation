@@ -1,0 +1,133 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 24px;
+
+    width: 100%;
+    min-height: 20vh;
+
+    padding: 48px 24px;
+
+    color: black;
+
+    .textContainer {
+        width: 100%;
+        max-width: 1200px;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h1 {
+            font-size: clamp(2rem, 3vw, 4rem);
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        p {
+            max-width: 900px;
+            margin: 0 auto;
+
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
+            line-height: 1.7;
+        }
+    }
+
+    .buttonContainer {
+        button {
+            cursor: pointer;
+
+            padding: 14px 24px;
+
+            border: none;
+            border-radius: 999px;
+
+            background-color: #009639;
+            color: white;
+
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: #b9f1ce;
+                color: black;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 40px 24px;
+
+        .textContainer {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 20px;
+
+        padding: 36px 20px;
+
+        .textContainer {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        .buttonContainer {
+            width: 100%;
+
+            button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 32px 16px;
+
+        .textContainer {
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: .95rem;
+            }
+        }
+
+        .buttonContainer {
+            button {
+                padding: 14px 18px;
+                font-size: .9rem;
+            }
+        }
+    }
+}

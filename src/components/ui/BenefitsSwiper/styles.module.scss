@@ -1,37 +1,59 @@
 .swiper {
     width: 100%;
     padding-bottom: 3rem;
-}
 
-.card {
-    background: #fff;
-    border-radius: 1rem;
-    overflow: hidden;
-    height: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
+    .card {
+        background: #fff;
+        border-radius: 1rem;
+        overflow: hidden;
+        height: 100%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-.imageContainer {
-    position: relative;
-    width: 100%;
-    height: 220px;
-}
+        .imageContainer {
+            position: relative;
+            width: 100%;
+            height: 320px;
 
-.image {
-    object-fit: cover;
-}
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 1;
 
-.content {
-    padding: 1.5rem;
+                background-color: rgba(0, 0, 0, .3);
+            }
 
-    h3 {
-        font-size: 1.25rem;
-        margin-bottom: .75rem;
+            .image {
+                object-fit: cover;
+            }
+
+            .content {
+                position: absolute;
+                bottom: 10px;
+                padding: 1.5rem;
+                z-index: 2;
+
+
+                h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: .75rem;
+                    color: white;
+                }
+
+                p {
+                    font-size: .95rem;
+                    line-height: 1.5;
+                    color: white;
+                }
+            }
+        }
+
     }
 
-    p {
-        font-size: .95rem;
-        line-height: 1.5;
-        color: #555;
+    :global(.swiper-pagination-bullet) {
+        background-color: white;
     }
 }

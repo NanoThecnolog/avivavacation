@@ -7,16 +7,14 @@
     justify-content: flex-end;
 
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
-    padding: 20px;
+    padding: 24px;
+    overflow: hidden;
 
     .banner {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
 
         img {
             width: 100%;
@@ -30,42 +28,188 @@
 
     .svgContainer {
         position: absolute;
-        bottom: 100px;
-        right: 250px;
+        right: 180px;
+        bottom: 120px;
 
         z-index: 2;
 
+        img {
+            width: 220px;
+            height: auto;
+        }
     }
 
     .textContainer {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: flex-start;
-        gap: 10px;
-        padding-bottom: 40px;
+        gap: 16px;
 
         width: 100%;
         max-width: 1200px;
 
+        padding-bottom: 40px;
+
         z-index: 2;
 
-        .title {}
+        .title {
+            max-width: 720px;
 
-        .paragraph {}
+            h1 {
+                font-size: clamp(2rem, 5vw, 4.5rem);
+                line-height: 1.1;
+                font-weight: 700;
+                color: #fff;
+            }
+        }
+
+        .paragraph {
+            max-width: 620px;
+
+            p {
+                font-size: clamp(1rem, 1.4vw, 1.2rem);
+                line-height: 1.6;
+                color: #fff;
+            }
+        }
 
         .buttonContainer {
+            margin-top: 12px;
 
             button {
-                padding: 10px 8px;
-                border-radius: 2rem;
+                cursor: pointer;
+
+                padding: 14px 22px;
+
+                border: none;
+                border-radius: 999px;
+
                 background-color: var(--greenLime);
                 color: #000;
 
+                font-size: 1rem;
+                font-weight: 600;
 
+                transition: .2s ease;
             }
         }
     }
+}
 
+@media (max-width: 1200px) {
+    .container {
+        .svgContainer {
+            right: 80px;
 
+            img {
+                width: 180px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        justify-content: center;
+
+        .svgContainer {
+            right: 40px;
+            bottom: 80px;
+
+            img {
+                width: 150px;
+            }
+        }
+
+        .textContainer {
+            padding-bottom: 0;
+
+            .title {
+                max-width: 100%;
+            }
+
+            .paragraph {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        align-items: flex-start;
+
+        min-height: 100dvh;
+
+        padding: 20px;
+
+        .svgContainer {
+            position: relative;
+
+            right: initial;
+            bottom: initial;
+
+            margin-bottom: 24px;
+
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 140px;
+            }
+        }
+
+        .textContainer {
+            gap: 20px;
+
+            .title {
+                h1 {
+                    font-size: 2.4rem;
+                }
+            }
+
+            .paragraph {
+                p {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+            }
+
+            .buttonContainer {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        .textContainer {
+            .title {
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+
+            .buttonContainer {
+                button {
+                    padding: 14px 18px;
+                    font-size: .95rem;
+                }
+            }
+        }
+
+        .svgContainer {
+            img {
+                width: 120px;
+            }
+        }
+    }
 }
