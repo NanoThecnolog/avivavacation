@@ -245,9 +245,7 @@
             }
         }
 
-        &::after {
-            content: "Acesse agora";
-
+        .buttonContainer {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -255,16 +253,15 @@
             width: 180px;
             height: 56px;
 
-            border-radius: 999px;
-
-            background-color: #C9D800;
-
-            color: #003B49;
-
-            font-size: 1.2rem;
-            font-weight: 700;
-
-            cursor: pointer;
+            button {
+                color: #003B49;
+                font-size: 1.2rem;
+                font-weight: 700;
+                background-color: #C9D800;
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+            }
         }
     }
 }

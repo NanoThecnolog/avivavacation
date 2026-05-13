@@ -4,6 +4,8 @@ import { FaPlus } from 'react-icons/fa'
 import { IoIosClose } from 'react-icons/io'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { contato } from '@/common/variables/contato'
 
 export default function SixSection() {
     const [active, setActive] = useState<number | null>(0)
@@ -20,7 +22,7 @@ export default function SixSection() {
                             Com o Clube de Férias Aviva você garante datas, destinos e tranquilidade para sua família. Sem estresse, sem surpresas e com muito mais liberdade.
                         </p>
                         <div>
-                            <button type='button'>Quero viajar com mais tranquilidade</button>
+                            <button type='button'><Link href={contato.link}>Quero viajar com mais tranquilidade</Link></button>
                         </div>
                     </div>
                     <div className={styles.imageContainer}>

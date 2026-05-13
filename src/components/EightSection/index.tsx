@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { IoIosClose } from 'react-icons/io'
 import { FaPlus } from 'react-icons/fa'
 import Image from 'next/image'
+import Link from 'next/link'
+import { contato } from '@/common/variables/contato'
 
 export default function EightSection() {
     const [active, setActive] = useState<number | null>(0)
@@ -15,7 +17,7 @@ export default function EightSection() {
                         <h1>Perguntas frequentes</h1>
                         <p>Encontre respostas rápidas para as dúvidas mais comuns.</p>
                         <div className={styles.buttonContainer}>
-                            <button type='button'>Saiba mais</button>
+                            <button type='button'><Link href={contato.link}>Saiba mais</Link></button>
                         </div>
                     </div>
                     <div className={styles.cardsContainer}>
@@ -58,6 +60,9 @@ export default function EightSection() {
                             alt='Clube de Férias'
                             fill
                         />
+                    </div>
+                    <div className={styles.buttonContainer}>
+                        <button type='button'><Link href={contato.link}>Acesse agora</Link></button>
                     </div>
                 </div>
             </div>
