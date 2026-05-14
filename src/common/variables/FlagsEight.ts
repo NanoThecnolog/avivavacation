@@ -1,3 +1,5 @@
+import { contato } from "./contato";
+
 export const flagsEight = [
     {
         title: 'O que é o Clube de Férias Aviva?',
@@ -13,6 +15,6 @@ export const flagsEight = [
     },
     {
         title: 'Qual contato para quem já é sócio do Clube de Férias?',
-        text: 'Você pode entrar em contato com o seu Clube de Férias pelo telefone --------, ou se preferir, acionar diretamente no whats, no mesmo número.'
+        text: `Você pode entrar em contato com o seu Clube de Férias pelo telefone ${contato.phone}, ou se preferir, acionar diretamente no whats, no mesmo número.`
     },
 ]

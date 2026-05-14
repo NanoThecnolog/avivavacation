@@ -1,10 +1,8 @@
-import Swiper from 'swiper'
 import styles from './styles.module.scss'
 import BenefitsSwiper from '../ui/BenefitsSwiper'
-import Link from 'next/link'
-import { contato } from '@/common/variables/contato'
+import { Props } from '../Banner-Principal'
 
-export default function ThirdSection() {
+export default function ThirdSection({ openModal }: Props) {
     return (
         <section className={styles.sectionContainer}>
             <svg
@@ -23,7 +21,7 @@ export default function ThirdSection() {
                     <div className={styles.textContainer}>
                         <h1>Férias planejadas por quem entende de férias há mais de 26 anos.</h1>
                         <div className={styles.buttonContainer}>
-                            <button type='button'><Link href={contato.link}>Quero minhas férias com economia e liberdade</Link></button>
+                            <button type='button' onClick={openModal}>Quero minhas férias com economia e liberdade</button>
                         </div>
                     </div>
                     <div className={styles.swiperContainer}>

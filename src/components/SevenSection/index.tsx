@@ -2,8 +2,9 @@ import { PubliCards } from '@/common/variables/PubliCards'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 import { contato } from '@/common/variables/contato'
+import { Props } from '../Banner-Principal'
 
-export default function SevenSection() {
+export default function SevenSection({ openModal }: Props) {
     return (
         <section className={styles.container}>
             <div className={styles.content}>
@@ -11,7 +12,7 @@ export default function SevenSection() {
                     <h1>Um Clube para criar lembranças que acompanham sua família para sempre.</h1>
                     <p>Mais do que viajar: é construir tradições e viver momentos que se tornam histórias.</p>
                     <div className={styles.buttonContainer}>
-                        <button type='button'><Link href={contato.link}>Garanta um futuro de férias inesquecíveis!</Link></button>
+                        <button type='button' onClick={openModal}>Garanta um futuro de férias inesquecíveis!</button>
                     </div>
                 </div>
                 <div className={styles.cardContainer}>

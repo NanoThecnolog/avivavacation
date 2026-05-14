@@ -8,8 +8,11 @@ import FifthSection from "@/components/FifthSection";
 import SixSection from "@/components/SixSection";
 import SevenSection from "@/components/SevenSection";
 import EightSection from "@/components/EightSection";
+import { useState } from "react";
+import Modal from "@/components/ui/modal";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <Head>
@@ -19,14 +22,18 @@ export default function Home() {
         <link rel="icon" href="/favico.svg" />
       </Head>
       <main className={styles.main}>
-        <Banner />
+        <Modal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
+        <Banner openModal={() => setIsOpen(true)} />
         <SecondSection />
-        <ThirdSection />
-        <ForthSection />
+        <ThirdSection openModal={() => setIsOpen(true)} />
+        <ForthSection openModal={() => setIsOpen(true)} />
         <FifthSection />
-        <SixSection />
-        <SevenSection />
-        <EightSection />
+        <SixSection openModal={() => setIsOpen(true)} />
+        <SevenSection openModal={() => setIsOpen(true)} />
+        <EightSection openModal={() => setIsOpen(true)} />
       </main>
     </>
   );

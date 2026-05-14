@@ -6,8 +6,9 @@ import { FaPlus } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
 import { contato } from '@/common/variables/contato'
+import { Props } from '../Banner-Principal'
 
-export default function EightSection() {
+export default function EightSection({ openModal }: Props) {
     const [active, setActive] = useState<number | null>(0)
     return (
         <section className={styles.container}>
@@ -17,7 +18,7 @@ export default function EightSection() {
                         <h1>Perguntas frequentes</h1>
                         <p>Encontre respostas rápidas para as dúvidas mais comuns.</p>
                         <div className={styles.buttonContainer}>
-                            <button type='button'><Link href={contato.link}>Saiba mais</Link></button>
+                            <button type='button' onClick={openModal}>Saiba mais</button>
                         </div>
                     </div>
                     <div className={styles.cardsContainer}>
@@ -62,7 +63,7 @@ export default function EightSection() {
                         />
                     </div>
                     <div className={styles.buttonContainer}>
-                        <button type='button'><Link href={contato.link}>Acesse agora</Link></button>
+                        <button type='button' onClick={openModal}>Acesse agora</button>
                     </div>
                 </div>
             </div>
