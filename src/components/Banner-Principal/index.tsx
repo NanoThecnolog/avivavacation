@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
 import { contato } from '@/common/variables/contato'
+import Image from 'next/image'
 
 export default function Banner() {
     return (
         <section className={styles.container}>
             <div className={styles.banner}>
-                <img src="/banner-principal.jpg" alt="Banner Principal" />
+                <Image src="/banner-principal.jpg" alt="Banner Principal" fill sizes='100vw' priority quality={50} />
             </div>
             <div className={styles.svgContainer}>
                 <img src="/logo-clube_ferias.svg" alt="Logo Clube de Férias" />
