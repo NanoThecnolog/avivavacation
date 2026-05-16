@@ -10,6 +10,7 @@ import SevenSection from "@/components/SevenSection";
 import EightSection from "@/components/EightSection";
 import { useState } from "react";
 import Modal from "@/components/ui/modal";
+import { contato } from "@/common/variables/contato";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +20,35 @@ export default function Home() {
         <title>Clube de Férias Aviva Vacation Clube</title>
         <meta name="description" content="Clube de Férias Aviva Vacation Clube" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="keywords"
+          content="clube de férias, clube, férias, vacation, aviva, viagem, planejar férias"
+        />
+
+        <meta property="og:title" content="Clube de Férias Aviva Vacation Clube" />
+        <meta
+          property="og:description"
+          content="Clube de Férias Aviva Vacation Clube."
+        />
+
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:image"
+          content={`${contato.website}/banner-principal.jpg`}
+        />
+
+        <meta
+          property="og:url"
+          content={contato.website}
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <link
+          rel="canonical"
+          href={contato.website}
+        />
         <link rel="icon" href="/favico.svg" />
       </Head>
       <main className={styles.main}>
