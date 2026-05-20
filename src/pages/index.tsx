@@ -11,6 +11,7 @@ import EightSection from "@/components/EightSection";
 import { useState } from "react";
 import Modal from "@/components/ui/modal";
 import { contato } from "@/common/variables/contato";
+import WhatsappButton from "@/components/ui/WhatsappButton";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
@@ -64,6 +65,7 @@ export default function Home() {
         <SixSection openModal={() => setIsOpen(true)} />
         <SevenSection openModal={() => setIsOpen(true)} />
         <EightSection openModal={() => setIsOpen(true)} />
+        <WhatsappButton />
       </main>
     </>
   );
