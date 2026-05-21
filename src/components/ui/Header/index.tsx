@@ -50,8 +50,10 @@ export default function Header() {
 
         const ddd = cleaned.slice(2, 4)
         const number = cleaned.slice(4)
+        const partOne = number.slice(0, 5)
+        const partTwo = number.slice(5)
 
-        return `(${ddd}) ${number}`
+        return `(${ddd}) ${partOne}-${partTwo}`
     }
     return (
         <nav className={styles.navContainer}>
