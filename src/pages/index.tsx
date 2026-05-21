@@ -12,6 +12,7 @@ import { useState } from "react";
 import Modal from "@/components/ui/modal";
 import { contato } from "@/common/variables/contato";
 import WhatsappButton from "@/components/ui/WhatsappButton";
+import Header from "@/components/ui/Header";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
@@ -53,6 +54,7 @@ export default function Home() {
         <link rel="icon" href="/favico.svg" />
       </Head>
       <main className={styles.main}>
+        <Header />
         <Modal
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
