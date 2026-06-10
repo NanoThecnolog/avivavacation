@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import styles from './styles.module.scss'
-import { contato } from '@/common/variables/contato'
 import Image from 'next/image'
 
 export interface Props {

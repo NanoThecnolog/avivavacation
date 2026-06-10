@@ -10,6 +10,29 @@
   overflow: hidden;
   //padding: 120px 60px;
   position: relative;
+
+  .swiper {
+    width: 100%;
+    min-height: 100vh;
+
+    .slide {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+
+      width: 100%;
+      min-height: 100vh;
+      //padding: 24px;
+      overflow: hidden;
+    }
+
+    :global(.swiper-pagination-bullet) {
+      background-color: #fff;
+    }
+  }
 }
 
 /* Enable hover only on non-touch devices */

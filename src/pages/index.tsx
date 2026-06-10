@@ -13,6 +13,13 @@ import Modal from "@/components/ui/modal";
 import { contato } from "@/common/variables/contato";
 import WhatsappButton from "@/components/ui/WhatsappButton";
 import Header from "@/components/ui/Header";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import BannerSec from "@/components/Banner-Sec";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
@@ -59,7 +66,25 @@ export default function Home() {
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
         />
-        <Banner openModal={() => setIsOpen(true)} />
+        <Swiper
+          className={styles.swiper}
+          modules={[Autoplay, Pagination, Navigation]}
+          slidesPerView={1}
+          loop
+          pagination={{ clickable: true }}
+          //navigation
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false
+          }}
+        >
+          <SwiperSlide className={styles.slide} data-swiper-autoplay="8000">
+            <BannerSec openModal={() => setIsOpen(true)} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.slide} data-swiper-autoplay="4000">
+            <Banner openModal={() => setIsOpen(true)} />
+          </SwiperSlide>
+        </Swiper>
         <SecondSection />
         <ThirdSection openModal={() => setIsOpen(true)} />
         <ForthSection openModal={() => setIsOpen(true)} />
