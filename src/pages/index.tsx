@@ -20,9 +20,11 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import BannerSec from "@/components/Banner-Sec";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import BlockedPage from "@/components/ui/Blocked";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isBlocked, setIsBlocked] = useState(true)
   return (
     <>
       <Head>
@@ -61,38 +63,44 @@ export default function Home() {
         <link rel="icon" href="/favico.svg" />
       </Head>
       <main className={styles.main}>
-        <Header />
-        <Modal
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-        />
-        <Swiper
-          className={styles.swiper}
-          modules={[Autoplay, Pagination, Navigation]}
-          slidesPerView={1}
-          loop
-          pagination={{ clickable: true }}
-          //navigation
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false
-          }}
-        >
-          <SwiperSlide className={styles.slide} data-swiper-autoplay="8000">
-            <BannerSec openModal={() => setIsOpen(true)} />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slide} data-swiper-autoplay="4000">
-            <Banner openModal={() => setIsOpen(true)} />
-          </SwiperSlide>
-        </Swiper>
-        <SecondSection />
-        <ThirdSection openModal={() => setIsOpen(true)} />
-        <ForthSection openModal={() => setIsOpen(true)} />
-        <FifthSection />
-        <SixSection openModal={() => setIsOpen(true)} />
-        <SevenSection openModal={() => setIsOpen(true)} />
-        <EightSection openModal={() => setIsOpen(true)} />
-        <WhatsappButton />
+        {
+          isBlocked
+            ? <BlockedPage />
+            : <>
+              <Header />
+              <Modal
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+              />
+              <Swiper
+                className={styles.swiper}
+                modules={[Autoplay, Pagination, Navigation]}
+                slidesPerView={1}
+                loop
+                pagination={{ clickable: true }}
+                //navigation
+                autoplay={{
+                  delay: 6000,
+                  disableOnInteraction: false
+                }}
+              >
+                <SwiperSlide className={styles.slide} data-swiper-autoplay="8000">
+                  <BannerSec openModal={() => setIsOpen(true)} />
+                </SwiperSlide>
+                <SwiperSlide className={styles.slide} data-swiper-autoplay="4000">
+                  <Banner openModal={() => setIsOpen(true)} />
+                </SwiperSlide>
+              </Swiper>
+              <SecondSection />
+              <ThirdSection openModal={() => setIsOpen(true)} />
+              <ForthSection openModal={() => setIsOpen(true)} />
+              <FifthSection />
+              <SixSection openModal={() => setIsOpen(true)} />
+              <SevenSection openModal={() => setIsOpen(true)} />
+              <EightSection openModal={() => setIsOpen(true)} />
+              <WhatsappButton />
+            </>
+        }
       </main>
     </>
   );
